@@ -36,6 +36,7 @@ const BookDetails: React.FC = () => {
     if (id) {
       GetBooks(id);
     }
+    window.scrollTo(0,0)
   }, [id]);
 
   const renderHTML = (htmlString: string) => {

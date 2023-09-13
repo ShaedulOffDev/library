@@ -10,6 +10,7 @@ import {
 } from "../slice/BooksSlice";
 import BooksService from "../service/BooksService";
 import { BookI, StateI } from "../interface/interface";
+import { motion } from "framer-motion";
 
 const BookList: React.FC = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const BookList: React.FC = () => {
       dispatch(setTotalItems(response.totalItems));
       dispatch(getBooksSuccess(response.items));
     } catch (error: any) {
-      dispatch(getBooksFailure(error));
+      dispatch(getBooksFailure(error.message));
       throw new Error(error);
     }
   };
@@ -65,7 +66,7 @@ const BookList: React.FC = () => {
   }, [searchingBy, category, sortingBy]);
 
   return (
-    <div className="cont pt-10 books">
+    <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} className="cont pt-10 books">
       <div className="mb-[30px]">
         <h2 className="text-[2rem] font-bold text-center">Books</h2>
         <span className="w-[35px] bg-orange-500 h-[5px] block m-auto rounded my-1"></span>
@@ -104,7 +105,7 @@ const BookList: React.FC = () => {
           {isLoading ? "Loading..." : "See more"}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
