@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+::-webkit-scrollbar{
+  background: #1d1f21;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background: #F97316;
+  border-radius: 20px;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  color: #ccc;
+  background: url(./assets/bg.jpg) no-repeat center / cover;
+  background-attachment: fixed;
+}
+.navbar {
+  box-sizing: border-box;
+  font-size: 800;
+  box-shadow: 50px 50px 100px #0c0c0d, -50px -50px 100px #2e3235;
+}
+option {
+  color: #fff;
+  background: #1d1f21;
+}
+.header > div:first-child {
+  height: calc(100vh - 80px);
+}
+.glass{
+  border-radius: 20px;
+  width: 70%;
+  height: 70%;
+}
+.glass, .books {
+  background: rgba(0, 0, 0, 0.28);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.books {
+  background: rgba(0, 0, 0, 0.8);
+}
+.book {
+  box-shadow: -10px 10px 20px #0c0c0d;
+  background: #27282a95;
+  border-radius: 5px !important;
+  border-radius: 0;
+}
+.cont {
+  max-width: 1920px;
+  margin: auto;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.footer-socials__item img{
+  filter: drop-shadow(0 15px 2px #111) grayscale(1);
+  transition: 1s;
+  transform: perspective(1000px);
+  perspective: 1000px;
+}
+.footer-socials__item:hover img{
+  filter: drop-shadow(0 40px 2px #111) grayscale(0);
+  transform: translateY(-20px) perspective(600px);
+  perspective: 600px;
+}
+@media (max-width: 1240px) {
+  .cont {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (max-width: 991.5px) {
+  .cont {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media (max-width: 768.5px) {
+  .cont {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (max-width: 580.5px) {
+  .cont {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 375.5px) {
+  .cont {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
